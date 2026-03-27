@@ -8,10 +8,12 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   url: 'https://maplephp.github.io',
-  baseUrl: '/',
+  baseUrl: '/maplephp/',
 
   organizationName: 'maplephp',
-  projectName: 'maplephp-docs',
+  projectName: 'maplephp',
+  deploymentBranch: 'gh-pages',
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -58,7 +60,7 @@ const config: Config = {
           label: 'Documentation',
         },
         {
-          href: 'https://github.com/maplephp',
+          href: 'https://github.com/maplephp/maplephp',
           label: 'GitHub',
           position: 'right',
         },
@@ -87,7 +89,7 @@ const config: Config = {
         {
           title: 'More',
           items: [
-            { label: 'GitHub', href: 'https://github.com/maplephp' },
+            { label: 'GitHub', href: 'https://github.com/maplephp/maplephp' },
             { label: 'Unitary Testing', href: 'https://maplephp.github.io/unitary/' },
           ],
         },
