@@ -71,3 +71,5 @@ The two-phase design prevents ordering issues when one service depends on anothe
 2. **boot()** — all services are now registered. Safe to resolve and configure them.
 
 This means you can define providers in any order in `configs/services.php` without worrying about dependencies between them.
+
+For simpler interface-to-class wiring that does not require a full provider, use [Bindings →](/docs/core/bindings).

@@ -26,6 +26,7 @@ const sidebars: SidebarsConfig = {
         'core/controllers',
         'core/services',
         'core/service-providers',
+        'core/bindings',
       ],
     },
     {

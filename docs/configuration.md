@@ -54,9 +54,9 @@ See [Middleware →](/docs/http/middleware) for built-in and custom middleware o
 ```php
 return [
     "bindings" => [
-        ErrorPageInterface::class => SimpleErrorPage::class,
+        CacheInterface::class => FileCache::class,
         // Fresh instance on every resolution:
-        // ErrorPageInterface::class => fn() => new SimpleErrorPage(),
+        // CacheInterface::class => fn() => new FileCache(),
     ],
     "providers" => [
         \MaplePHP\Core\Providers\DatabaseProvider::class,
@@ -65,7 +65,7 @@ return [
 ];
 ```
 
-See [Service Providers →](/docs/core/service-providers) for how to write and register providers.
+See [Bindings →](/docs/core/bindings) for interface-to-class wiring and [Service Providers →](/docs/core/service-providers) for bootstrapping services that require runtime configuration.
 
 ## `configs/database.php`
 
