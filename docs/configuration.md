@@ -8,8 +8,6 @@ description: Environment variables and config file reference for MaplePHP.
 
 ## Environment variables
 
-Copy `.env.example` to `.env` and fill in your values. The `env()` helper reads from `$_ENV` and `$_SERVER`.
-
 | Key | Default | Purpose |
 |---|---|---|
 | `APP_TITLE` | — | Application name |
@@ -21,7 +19,7 @@ Copy `.env.example` to `.env` and fill in your values. The `env()` helper reads 
 | `DB_USERNAME` | — | Database username |
 | `DB_PASSWORD` | — | Database password |
 
-## `configs/configs.php`
+## `configs/app.php`
 
 ```php
 return [
@@ -47,13 +45,23 @@ return [
 
 See [Middleware →](/docs/http/middleware) for built-in and custom middleware options.
 
-## `configs/providers.php`
+## `configs/services.php`
+
+`services.php` configures the full service container. It has two keys: `bindings` and `providers`.
+
+**Bindings** map an interface or abstract class to a concrete implementation. A class string binding is resolved as a singleton. Use a closure to get a fresh instance each time:
 
 ```php
 return [
-    // Add ServiceProvider subclasses here.
-    // Providers are registered in order, then booted in order.
-    \MaplePHP\Core\Providers\DatabaseProvider::class,
+    "bindings" => [
+        ErrorPageInterface::class => SimpleErrorPage::class,
+        // Fresh instance on every resolution:
+        // ErrorPageInterface::class => fn() => new SimpleErrorPage(),
+    ],
+    "providers" => [
+        \MaplePHP\Core\Providers\DatabaseProvider::class,
+        \App\Providers\MailServiceProvider::class,
+    ],
 ];
 ```
 

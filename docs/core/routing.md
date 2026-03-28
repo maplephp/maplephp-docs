@@ -8,10 +8,10 @@ description: Define HTTP and CLI routes in MaplePHP.
 
 ## HTTP routes
 
-Define HTTP routes in `routers/web.php`. The `$router` variable is injected automatically.
+Define HTTP routes in `routes/web.php`. The `$router` variable is injected automatically.
 
 ```php
-// routers/web.php
+// routes/web.php
 use App\Controllers\UserController;
 
 $router->get("/users", [UserController::class, "index"]);
@@ -86,10 +86,10 @@ public function show(ResponseInterface $response, PathInterface $path): Response
 
 ## CLI routes
 
-Define CLI commands in `routers/console.php`:
+Define CLI commands in `routes/console.php`:
 
 ```php
-// routers/console.php
+// routes/console.php
 use App\Commands\ImportCommand;
 
 $router->cli("import", [ImportCommand::class, "index"]);

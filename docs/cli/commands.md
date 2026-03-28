@@ -12,6 +12,8 @@ CLI commands extend `MaplePHP\Core\Routing\DefaultCommand`. Generate a scaffold 
 ./maple make --type=command --name=Import
 ```
 
+__Or just run `maple make` and and follow the instructions.__
+
 ## Anatomy of a command
 
 ```php
@@ -57,10 +59,10 @@ class ImportCommand extends DefaultCommand
 
 ## Register the command
 
-Add the route in `routers/console.php`:
+Add the route in `routes/console.php`:
 
 ```php
-// routers/console.php
+// routes/console.php
 $router->cli("import", [App\Commands\ImportCommand::class, "index"]);
 ```
 

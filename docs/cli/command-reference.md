@@ -24,6 +24,8 @@ All commands are invoked via the `./maple` entry point in the project root.
 | `./maple make --type=migration --name=CreateUsers` | Generate a migration class |
 | `./maple make --type=command --name=Import` | Generate a CLI command class |
 
+__Or just run `maple make` and and follow the instructions.__
+
 Generated files are placed in the expected directory with the correct namespace pre-filled.
 
 ## Migrations
@@ -39,4 +41,4 @@ Generated files are placed in the expected directory with the correct namespace 
 
 ## Custom commands
 
-Custom commands are defined in `app/Commands/` and registered in `routers/console.php`. See [Writing Commands →](/docs/cli/commands).
+Custom commands are defined in `app/Commands/` and registered in `routes/console.php`. See [Writing Commands →](/docs/cli/commands).

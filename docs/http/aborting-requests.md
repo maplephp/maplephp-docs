@@ -51,9 +51,7 @@ public function store(ResponseInterface $response, ServerRequestInterface $reque
 The third `$props` argument is forwarded as part of `$context` in `ErrorPageInterface::render()`:
 
 ```php
-abort(403, 'Access denied', ['redirect' => '/login']);
+abort(403, 'Access denied');
 ```
-
-In the error page renderer, `$context['redirect']` will be `'/login'`.
 
 See [Error Handling →](/docs/http/error-handling) for how to implement a custom error page.

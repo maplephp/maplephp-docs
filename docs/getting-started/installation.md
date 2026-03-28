@@ -29,13 +29,8 @@ Visit `http://localhost:8000` to see the default welcome page.
 
 ## Environment configuration
 
-Copy `.env.example` to `.env` and fill in your values:
+Edit `.env` and fill in your values:
 
-```bash
-cp .env.example .env
-```
-
-The `env()` helper reads from `$_ENV` and `$_SERVER`. At minimum, set:
 
 ```env
 APP_TITLE=My App
@@ -55,10 +50,10 @@ DB_PASSWORD=
 
 ## Your first route
 
-Add a route in `routers/web.php`:
+Add a route in `routes/web.php`:
 
 ```php
-// routers/web.php
+// routes/web.php
 $router->get("/hello/{name}", [App\Controllers\HelloController::class, "greet"]);
 ```
 

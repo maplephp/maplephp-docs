@@ -83,5 +83,6 @@ return $response->withHeader('Content-Type', 'application/json');
 ```bash
 ./maple make --type=controller --name=User
 ```
+__Or just run `maple make` and and follow the instructions.__
 
 This creates `app/Controllers/UserController.php` with the correct namespace and base class already set up.

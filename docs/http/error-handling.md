@@ -95,7 +95,7 @@ return [
 ];
 ```
 
-`TwigServiceProvider` must be registered in `configs/providers.php` for this to work.
+`TwigServiceProvider` must be registered in `configs/services.php` for this to work.
 
 ## Vanilla vs Twig
 

@@ -14,15 +14,15 @@ my-app/
 │   ├── Commands/        # CLI commands — extend DefaultCommand
 │   └── Providers/       # Custom service providers — extend ServiceProvider
 ├── configs/
-│   ├── configs.php      # App settings: title, environment, timezone, locale
+│   ├── app.php          # App settings: title, environment, timezone, locale
 │   ├── database.php     # Database connections (MySQL, SQLite, in-memory test)
 │   ├── http.php         # Middleware pipeline configuration
-│   └── providers.php    # Service providers to register and boot
+│   └── services.php     # Bindings and service providers for the DI container
 ├── database/
 │   └── migrations/      # Schema migration classes (timestamped filenames)
 ├── public/
 │   └── index.php        # Web entry point — boots HttpKernel
-├── routers/
+├── routes/
 │   ├── web.php          # HTTP routes (FastRoute-based)
 │   └── console.php      # CLI command routes
 ├── storage/             # Cache files, logs, and temp data (must be writable)
@@ -49,12 +49,12 @@ All PHP config files return arrays. The framework merges them and makes the resu
 
 | File | Purpose |
 |---|---|
-| `configs.php` | App name, environment, timezone, locale |
+| `app.php` | App name, environment, timezone, locale |
 | `database.php` | Database connection definitions |
 | `http.php` | Global middleware pipeline |
-| `providers.php` | List of service provider class names to register |
+| `services.php` | Interface bindings and service provider class names |
 
-### `routers/`
+### `routes/`
 
 | File | Purpose |
 |---|---|
@@ -78,7 +78,7 @@ Migration classes are timestamped: `2026-01-01-000000_CreateUsersMigration.php`.
 
 ### `maple`
 
-The CLI entry point. Boots `CliKernel` and dispatches commands defined in `routers/console.php`.
+The CLI entry point. Boots `CliKernel` and dispatches commands defined in `routes/console.php`.
 
 ## Generated scaffolds
 
@@ -90,5 +90,7 @@ Use `./maple make` to generate class stubs:
 ./maple make --type=migration --name=CreateUsers
 ./maple make --type=command --name=Import
 ```
+
+__Or just run `maple make` and and follow the instructions.__
 
 Files are placed in the expected directories with correct namespaces pre-filled.

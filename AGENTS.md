@@ -17,7 +17,10 @@ This is a mandatory requirement.
 Do not skip files in `mapleDocs/`.
 Do not assume the README alone is enough.
 Do not invent behavior when `mapleDocs/` already explains it.
-If `mapleDocs/` and other sources differ, treat `mapleDocs/` as the primary documentation source and then cross-check code examples where needed.
+If `mapleDocs/` and other sources differ, treat `mapleDocs/` as the primary documentation source and then cross-check code examples where needed. All files in root is mostly new features and stuff.
+In `mapleDocs/_archived` directory, there is the archived documentation for the framework, meaning it is already added to the documentation and might be dated.
+The `mapleDocs/_changes` directory, should allways be read first.
+
 
 ## Additional source review order
 

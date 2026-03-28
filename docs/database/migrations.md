@@ -14,6 +14,8 @@ MaplePHP's migration runner uses Doctrine DBAL for schema operations. Migration 
 ./maple make --type=migration --name=CreateUsers
 ```
 
+__Or just run `maple make` and and follow the instructions.__
+
 This creates a file like `database/migrations/2026-01-01-000000_CreateUsersMigration.php`.
 
 ## Writing a migration

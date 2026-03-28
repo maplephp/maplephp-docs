@@ -34,7 +34,22 @@ $app->isProd();    // bool
 $app->isDev();     // bool
 ```
 
-The environment value comes from the `env` key in `configs/configs.php`, which typically reads `APP_ENV` from `.env`.
+The environment value comes from the `env` key in `configs/app.php`, which typically reads `APP_ENV` from `.env`.
+
+## Config access
+
+Read configuration values from the `App` singleton without manually loading config files.
+
+```php
+// All values from configs/app.php as an array
+$app->app();
+
+// A single value from configs/app.php
+$app->getApp('timezone');
+
+// All values from all files in configs/ as a merged array
+$app->configs();
+```
 
 ## Usage in services
 

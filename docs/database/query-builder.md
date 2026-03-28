@@ -6,7 +6,7 @@ description: The MaplePHP DB query builder built on Doctrine DBAL.
 
 # Query Builder
 
-The database layer is built on [Doctrine DBAL](https://www.doctrine-project.org/projects/dbal.html) and exposed through a fluent query builder. Enable it by adding `DatabaseProvider` to `configs/providers.php`.
+The database layer is built on [Doctrine DBAL](https://www.doctrine-project.org/projects/dbal.html) and exposed through a fluent query builder. Enable it by adding `DatabaseProvider` to `configs/services.php`.
 
 ## Configuration
 

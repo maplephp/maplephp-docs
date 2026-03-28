@@ -67,4 +67,6 @@ public function register(ContainerInterface $container): void
 ./maple make --type=service --name=User
 ```
 
+__Or just run `maple make` and and follow the instructions.__
+
 This creates `app/Services/UserService.php` with the correct namespace pre-filled.

@@ -38,13 +38,15 @@ class MailServiceProvider extends ServiceProvider
 
 ## Registering a provider
 
-Add the fully-qualified class name to `configs/providers.php`:
+Add the fully-qualified class name to `configs/services.php`:
 
 ```php
-// configs/providers.php
+// configs/services.php
 return [
-    \MaplePHP\Core\Providers\DatabaseProvider::class,
-    \App\Providers\MailServiceProvider::class,
+    "providers" => [
+        \MaplePHP\Core\Providers\DatabaseProvider::class,
+        \App\Providers\MailServiceProvider::class,
+    ],
 ];
 ```
 
@@ -68,4 +70,4 @@ The two-phase design prevents ordering issues when one service depends on anothe
 1. **register()** — bind services into the container. No other service should be resolved here.
 2. **boot()** — all services are now registered. Safe to resolve and configure them.
 
-This means you can define providers in any order in `configs/providers.php` without worrying about dependencies between them.
+This means you can define providers in any order in `configs/services.php` without worrying about dependencies between them.

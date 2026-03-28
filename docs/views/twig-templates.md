@@ -10,13 +10,15 @@ MaplePHP ships with built-in Twig support via `TwigServiceProvider` and the `Map
 
 ## Setup
 
-Add `TwigServiceProvider` to `configs/providers.php`:
+Add `TwigServiceProvider` to `configs/services.php`:
 
 ```php
-// configs/providers.php
+// configs/services.php
 return [
-    \MaplePHP\Core\Providers\DatabaseProvider::class,
-    \MaplePHP\Core\Providers\TwigServiceProvider::class,
+    "providers" => [
+        \MaplePHP\Core\Providers\DatabaseProvider::class,
+        \MaplePHP\Core\Providers\TwigServiceProvider::class,
+    ],
 ];
 ```
 

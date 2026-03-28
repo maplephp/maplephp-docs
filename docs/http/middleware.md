@@ -79,7 +79,7 @@ return [
 
 ## Route-scoped middleware
 
-To apply middleware only to specific routes, use a route group in `routers/web.php`:
+To apply middleware only to specific routes, use a route group in `routes/web.php`:
 
 ```php
 use MaplePHP\Emitron\Middlewares\GzipMiddleware;
