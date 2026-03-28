@@ -12,6 +12,8 @@ MaplePHP ships with built-in Twig support via `TwigServiceProvider` and the `Map
 
 Add `TwigServiceProvider` to `configs/services.php`:
 
+> _This should already be done by default after installing MaplePHP._
+
 ```php
 // configs/services.php
 return [

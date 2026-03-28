@@ -46,6 +46,8 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'views/twig-templates',
+        'views/layouts-and-partials',
+        'views/extending-twig',
       ],
     },
     {
