@@ -64,15 +64,13 @@ namespace App\Controllers;
 
 use MaplePHP\Core\Routing\DefaultController;
 use MaplePHP\Http\Interfaces\PathInterface;
-use Psr\Http\Message\ResponseInterface;
 
 class HelloController extends DefaultController
 {
-    public function greet(ResponseInterface $response, PathInterface $path): ResponseInterface
+    public function greet(PathInterface $path): string
     {
         $name = $path->select("name")->last();
-        $response->getBody()->write("Hello, {$name}!");
-        return $response;
+        return "Hello, {$name}!";
     }
 }
 ```

@@ -31,16 +31,10 @@ class UserService
 ## Injecting into a controller
 
 ```php
-public function show(
-    ResponseInterface $response,
-    PathInterface     $path,
-    UserService       $users
-): ResponseInterface {
+public function show(PathInterface $path, UserService $users): array
+{
     $id   = (int) $path->select("id")->last();
-    $user = $users->find($id);
-
-    $response->getBody()->write(json_encode($user));
-    return $response->withHeader("Content-Type", "application/json");
+    return $users->find($id);
 }
 ```
 
